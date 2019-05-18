@@ -3,7 +3,6 @@ import React, {Component} from 'react'
 class Book extends Component {
 
     handleOptionChange = (e) => {
-        //let selected = document.getElementById("select_id").value;
         let selected = e.target.value;
         if (this.props.onChangeShelf) {
             this.props.onChangeShelf(this.props.book, selected)
@@ -19,7 +18,7 @@ class Book extends Component {
                             width: 128,
                             height: 188,
                             backgroundImage: `url(${this.props.book.imageLinks.thumbnail})`
-                        }}></div>
+                        }}/>
                         <div className="book-shelf-changer">
                             <select id="select_id" onChange={this.handleOptionChange} value={this.props.book.shelf}>
                                 <option value="move" disabled>Move to...</option>
