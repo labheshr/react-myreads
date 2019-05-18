@@ -26,7 +26,7 @@ class Search extends Component {
 
     handleTextChange = async query => {
         query = query.trim();
-        this.setState({ query, results: [] });
+        this.setState({ query: query });
         this.searchDebounced(query);
     };
 
