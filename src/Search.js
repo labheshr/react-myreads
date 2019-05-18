@@ -54,7 +54,7 @@ class Search extends Component {
                     </div>
                 </div>
                 <div className="search-books-results">
-                    <BookGrid books={this.state.books}/>
+                    <BookGrid books={this.state.books} onChangeShelf={this.props.onChangeShelf}/>
                 </div>
             </div>
         )
