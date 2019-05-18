@@ -2,13 +2,15 @@ import React, {Component} from 'react'
 
 class Book extends Component {
 
+    // componentDidMount() {
+    //     console.log(this.props.book);
+    // }
     handleOptionChange = (e) => {
         let selected = e.target.value;
         if (this.props.onChangeShelf) {
             this.props.onChangeShelf(this.props.book, selected)
         }
     };
-
     render() {
         return (
             <li>
@@ -20,7 +22,7 @@ class Book extends Component {
                             backgroundImage: `url(${this.props.book.imageLinks.thumbnail})`
                         }}/>
                         <div className="book-shelf-changer">
-                            <select id="select_id" onChange={this.handleOptionChange} value={this.props.book.shelf}>
+                            <select id="select_id" onChange={this.handleOptionChange} value={this.props.book.shelf === undefined ? "none": this.props.book.shelf}>
                                 <option value="move" disabled>Move to...</option>
                                 <option value="currentlyReading">Currently Reading</option>
                                 <option value="wantToRead">Want to Read</option>

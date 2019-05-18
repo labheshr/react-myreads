@@ -17,7 +17,16 @@ class Search extends Component {
             .then(books => {
                 if (this.token === token) {
                     const booksFetched = Array.isArray(books) ? books : [];
-                    this.setState({ books: booksFetched });
+                    //console.log(booksFetched);
+                    //TODO: a better way to do this? perhaps use a map?
+                    for (let i = 0; i < booksFetched.length; i++) {
+                        for (let j = 0; j < this.props.shelfBooks.length; j++) {
+                            if (booksFetched[i].id === this.props.shelfBooks[j].id) {
+                                booksFetched[i].shelf = this.props.shelfBooks[j].shelf;
+                            }
+                        }
+                    }
+                    this.setState({books: booksFetched});
                 }
             });
     };
@@ -26,7 +35,7 @@ class Search extends Component {
 
     handleTextChange = async query => {
         query = query.trim();
-        this.setState({ query: query });
+        this.setState({query: query});
         this.searchDebounced(query);
     };
 
