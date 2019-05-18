@@ -33,7 +33,7 @@ class Search extends Component {
     searchDebounced = AwesomeDebouncePromise(this.search, 500);
 
     handleTextChange = async query => {
-        query = query.trim();
+        //query = query.trim();
         this.setState({query: query});
         this.searchDebounced(query);
     };
