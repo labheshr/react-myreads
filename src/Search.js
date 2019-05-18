@@ -17,8 +17,6 @@ class Search extends Component {
             .then(books => {
                 if (this.token === token) {
                     const booksFetched = Array.isArray(books) ? books : [];
-                    //console.log(booksFetched);
-                    //TODO: a better way to do this? perhaps use a map?
                     for (let i = 0; i < booksFetched.length; i++) {
                         for (let j = 0; j < this.props.shelfBooks.length; j++) {
                             if (booksFetched[i].id === this.props.shelfBooks[j].id) {

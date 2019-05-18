@@ -2,9 +2,6 @@ import React, {Component} from 'react'
 
 class Book extends Component {
 
-    // componentDidMount() {
-    //     console.log(this.props.book);
-    // }
     handleOptionChange = (e) => {
         let selected = e.target.value;
         if (this.props.onChangeShelf) {
