@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types';
 
 class Book extends Component {
 
@@ -8,6 +9,7 @@ class Book extends Component {
             this.props.onChangeShelf(this.props.book, selected)
         }
     };
+
     render() {
         return (
             <li>
@@ -19,7 +21,8 @@ class Book extends Component {
                             backgroundImage: `url(${this.props.book.imageLinks.thumbnail})`
                         }}/>
                         <div className="book-shelf-changer">
-                            <select id="select_id" onChange={this.handleOptionChange} value={this.props.book.shelf === undefined ? "none": this.props.book.shelf}>
+                            <select id="select_id" onChange={this.handleOptionChange}
+                                    value={this.props.book.shelf === undefined ? "none" : this.props.book.shelf}>
                                 <option value="move" disabled>Move to...</option>
                                 <option value="currentlyReading">Currently Reading</option>
                                 <option value="wantToRead">Want to Read</option>
@@ -36,5 +39,9 @@ class Book extends Component {
         )
     }
 }
+
+Book.propTypes = {
+    book: PropTypes.object.isRequired
+};
 
 export default Book;

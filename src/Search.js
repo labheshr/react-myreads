@@ -3,6 +3,7 @@ import BookGrid from "./BookGrid";
 import {Link} from "react-router-dom";
 import * as BooksAPI from './BooksAPI'
 import AwesomeDebouncePromise from 'awesome-debounce-promise';
+import PropTypes from 'prop-types';
 
 class Search extends Component {
     state = {
@@ -59,4 +60,8 @@ class Search extends Component {
     }
 }
 
+Search.propTypes = {
+    shelfBooks: PropTypes.array.isRequired,
+    onChangeShelf: PropTypes.func.isRequired
+};
 export default Search;
