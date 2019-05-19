@@ -11,7 +11,7 @@ For further details on this assignment please see [this page](https://github.com
 
 ## Design
 * The project consists of two pages:
-    * A landing page which lists in the books in current library
+    * A landing page which lists in the books in our library (Currently Reading, Want to Read, Read)
     * A search page to search for and add new books to our library
     
  ### Component Structure
