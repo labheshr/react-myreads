@@ -1,7 +1,7 @@
 # MyReads Project
 
 This is my submission for the first project for React Nanodegree (my-reads).
-For further details on this assignment please see [This page](https://github.com/udacity/reactnd-project-myreads-starter)
+For further details on this assignment please see [this page](https://github.com/udacity/reactnd-project-myreads-starter)
 
 ## Getting Started
 

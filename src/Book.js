@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 class Book extends Component {
 
     handleOptionChange = (e) => {
-        let selected = e.target.value;
+        const selected = e.target.value;
         if (this.props.onChangeShelf) {
             this.props.onChangeShelf(this.props.book, selected)
         }
